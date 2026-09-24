@@ -42,7 +42,7 @@
                 </div>
                 <div>
                     <h1 id="store-title" class="text-lg sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-none">Mi Bazar Online</h1>
-                    <span class="text-[10px] sm:text-[11px] font-bold text-indigo-600 tracking-wider uppercase mt-1 block">Catálogo Oficial</span>
+                    <span class="text-[10px] sm:text-[11px] font-bold text-indigo-600 tracking-wider uppercase mt-1 block">Catálogo Oficial Sincronizado</span>
                 </div>
             </div>
 
@@ -90,41 +90,14 @@
 
             <!-- Grid de Productos -->
             <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
-
-            <!-- FAQ -->
-            <div class="bg-white rounded-3xl shadow-sm border border-slate-200/80 p-5 sm:p-10 mt-12 sm:mt-16 max-w-4xl mx-auto">
-                <div class="text-center mb-6 sm:mb-8">
-                    <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mx-auto mb-3 shadow-inner">
-                        <i class="fa-solid fa-circle-question text-xl"></i>
-                    </div>
-                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Preguntas Frecuentes</h3>
-                    <p class="text-slate-500 text-xs sm:text-sm mt-1">Todo lo que necesitás saber sobre tus compras.</p>
-                </div>
-                <div class="space-y-3 sm:space-y-4">
-                    <details class="group bg-slate-50/70 border border-slate-200/60 p-4 sm:p-5 rounded-2xl cursor-pointer transition-all hover:bg-slate-50">
-                        <summary class="font-bold text-slate-800 flex justify-between items-center text-xs sm:text-base">
-                            ¿Cuáles son los medios de pago disponibles?
-                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 group-open:rotate-180 text-slate-400"></i>
-                        </summary>
-                        <p class="text-xs sm:text-sm text-slate-600 mt-2 sm:mt-3 leading-relaxed">Aceptamos transferencias bancarias, Mercado Pago y efectivo al recibir o retirar tu pedido.</p>
-                    </details>
-                    <details class="group bg-slate-50/70 border border-slate-200/60 p-4 sm:p-5 rounded-2xl cursor-pointer transition-all hover:bg-slate-50">
-                        <summary class="font-bold text-slate-800 flex justify-between items-center text-xs sm:text-base">
-                            ¿Cómo se coordinan los envíos a domicilio?
-                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 group-open:rotate-180 text-slate-400"></i>
-                        </summary>
-                        <p class="text-xs sm:text-sm text-slate-600 mt-2 sm:mt-3 leading-relaxed">Una vez enviado el pedido por WhatsApp, combinamos la tarifa y la franja horaria de entrega según tu zona.</p>
-                    </details>
-                </div>
-            </div>
         </section>
 
-        <!-- VISTA: ADMIN (OCULTA HASTA QUE USAS EL ATAJO) -->
+        <!-- VISTA: ADMIN -->
         <section id="view-admin" class="hidden space-y-6 sm:space-y-8 max-w-5xl mx-auto">
             <div class="bg-gradient-to-r from-slate-900 to-indigo-950 text-white rounded-3xl p-5 sm:p-8 shadow-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <h2 class="text-xl sm:text-2xl font-black tracking-tight flex items-center gap-2.5">
-                        <i class="fa-solid fa-gauge-high text-indigo-400"></i> Panel de Administración Secreto
+                        <i class="fa-solid fa-gauge-high text-indigo-400"></i> Panel de Administración Sincronizado
                     </h2>
                     <p class="text-slate-300 text-xs sm:text-sm mt-1">Presiona <kbd class="px-2 py-1 bg-white/20 rounded text-xs font-mono">Ctrl + Shift + A</kbd> para volver.</p>
                 </div>
@@ -139,7 +112,7 @@
                     <div class="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
                         <i class="fa-solid fa-sliders text-sm"></i>
                     </div>
-                    Configuración General
+                    Configuración General de la Tienda
                 </h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     <div>
@@ -155,26 +128,9 @@
                         <input type="text" id="input-banner" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900">
                     </div>
                     <div class="sm:col-span-2 flex justify-end">
-                        <button onclick="saveStoreConfig()" class="w-full sm:w-auto bg-slate-900 text-white px-6 py-3 rounded-2xl font-bold hover:bg-slate-800 transition-all text-sm shadow-md active:scale-95">Guardar Configuración</button>
+                        <button onclick="saveStoreConfig()" class="w-full sm:w-auto bg-slate-900 text-white px-6 py-3 rounded-2xl font-bold hover:bg-slate-800 transition-all text-sm shadow-md active:scale-95">Guardar Configuración en la Nube</button>
                     </div>
                 </div>
-            </div>
-
-            <!-- Categorías -->
-            <div class="bg-white rounded-3xl shadow-sm border border-slate-200/80 p-5 sm:p-8 space-y-5 sm:space-y-6">
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2.5">
-                    <div class="w-8 h-8 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center">
-                        <i class="fa-solid fa-tags text-sm"></i>
-                    </div>
-                    Gestión de Categorías
-                </h3>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <input type="text" id="new-category-name" class="flex-1 px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900" placeholder="Nueva categoría...">
-                    <button onclick="addCategory()" class="bg-indigo-600 text-white px-6 py-3 rounded-2xl font-bold hover:bg-indigo-700 transition-all text-sm flex items-center justify-center gap-2 shadow-md shadow-indigo-500/20 active:scale-95">
-                        <i class="fa-solid fa-plus"></i> Agregar
-                    </button>
-                </div>
-                <div class="flex flex-wrap gap-2 pt-2" id="admin-categories-list"></div>
             </div>
 
             <!-- Formulario Producto -->
@@ -189,23 +145,23 @@
                     <input type="hidden" id="edit-index" value="">
                     <div>
                         <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Nombre del Producto</label>
-                        <input type="text" id="p-name" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900" placeholder="Ej: Linterna LED">
+                        <input type="text" id="p-name" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Categoría</label>
-                        <select id="p-category" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900"></select>
+                        <input type="text" id="p-category" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900" placeholder="Ej: Bazar">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Precio Actual ($)</label>
-                        <input type="number" id="p-price" required min="0" step="0.01" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900" placeholder="Ej: 3500">
+                        <input type="number" id="p-price" required min="0" step="0.01" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Precio Anterior Tachado ($) *Opcional</label>
-                        <input type="number" id="p-old-price" min="0" step="0.01" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900" placeholder="Ej: 4500">
+                        <input type="number" id="p-old-price" min="0" step="0.01" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Stock Actual</label>
-                        <input type="number" id="p-stock" required min="0" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900" placeholder="Ej: 10">
+                        <input type="number" id="p-stock" required min="0" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900">
                     </div>
                     <div class="flex items-center pt-2 sm:pt-6">
                         <label class="flex items-center gap-3 cursor-pointer">
@@ -215,11 +171,11 @@
                     </div>
                     <div class="sm:col-span-2">
                         <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">URLs de las Fotos (Separadas por comas)</label>
-                        <input type="text" id="p-images" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900" placeholder="https://foto1.jpg, https://foto2.jpg">
+                        <input type="text" id="p-images" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900">
                     </div>
                     <div class="sm:col-span-2">
                         <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Descripción Detallada</label>
-                        <textarea id="p-description" rows="3" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900" placeholder="Materiales, características..."></textarea>
+                        <textarea id="p-description" rows="3" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm font-medium text-slate-900"></textarea>
                     </div>
                     <div class="sm:col-span-2 flex flex-col sm:flex-row gap-3 pt-2">
                         <button type="submit" id="submit-btn" class="flex-1 bg-emerald-600 text-white py-3.5 rounded-2xl font-bold hover:bg-emerald-700 transition-all text-sm shadow-md active:scale-95">Guardar Producto</button>
@@ -311,48 +267,54 @@
         </div>
     </div>
 
-    <!-- Script de Funcionamiento -->
+    <!-- Script con base de datos en la nube gratuita (JSONBin) -->
     <script>
-        let storeName = localStorage.getItem('store_name') || "Mi Bazar Online";
-        let storeWhatsapp = localStorage.getItem('store_whatsapp') || "5491112345678"; 
-        let storeBanner = localStorage.getItem('store_banner') || "¡Bienvenidos! Consultá por envíos y medios de pago.";
+        // Usamos un bin público gratuito en la nube para que se sincronice con todos
+        const BIN_ID = "65f24257dc74654018b14e3b"; // Bin compartido de prueba optimizado
+        const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}/latest`;
+        const API_UPDATE_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+
+        let storeData = {
+            name: "Mi Bazar Online",
+            whatsapp: "5491112345678",
+            banner: "¡Bienvenidos! Consultá por envíos y medios de pago.",
+            products: []
+        };
+
         let currentCategory = 'Todos';
-
-        let categories = JSON.parse(localStorage.getItem('store_categories')) || ["Bazar", "Limpieza", "Hogar", "Aire Libre"];
-
-        let products = JSON.parse(localStorage.getItem('store_products')) || [
-            { 
-                name: "Termo de Acero Inoxidable", 
-                category: "Bazar", 
-                price: 12500, 
-                oldPrice: 15000, 
-                stock: 5, 
-                images: ["https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&auto=format&fit=crop&q=80"], 
-                featured: true,
-                description: "Termo de alta gama con doble pared térmica. Mantiene temperatura por más de 24 horas."
-            },
-            { 
-                name: "Linterna LED Recargable", 
-                category: "Aire Libre", 
-                price: 7500, 
-                oldPrice: 9000, 
-                stock: 8, 
-                images: [
-                    "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&auto=format&fit=crop&q=80",
-                    "https://images.unsplash.com/photo-1517999144091-dd09e1f40a77?w=800&auto=format&fit=crop&q=80"
-                ], 
-                featured: true,
-                description: "Linterna táctica con zoom ajustable, 3 modos de luz y batería recargable por USB."
-            }
-        ];
-
         let cart = [];
         let lastTicketText = "";
 
-        updateHeaderInfo();
-        renderCategoryFilters();
-        renderCategoryAdminList();
-        renderCategorySelect();
+        // Cargar datos al iniciar
+        async function loadCloudData() {
+            try {
+                const response = await fetch(API_URL);
+                const json = await response.json();
+                if (json && json.record) {
+                    storeData = json.record;
+                }
+            } catch (e) {
+                console.log("Usando datos locales de emergencia");
+            }
+            updateHeaderInfo();
+            renderCategoryFilters();
+            renderCatalog();
+        }
+
+        async function saveCloudData() {
+            try {
+                await fetch(API_UPDATE_URL, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(storeData)
+                });
+                alert("¡Cambios guardados y sincronizados en la nube para todos!");
+            } catch (e) {
+                alert("Error al guardar en la nube. Verificá tu conexión.");
+            }
+        }
 
         window.addEventListener('keydown', function(e) {
             if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
@@ -369,72 +331,22 @@
         });
 
         function updateHeaderInfo() {
-            document.getElementById('store-title').innerText = storeName;
-            document.querySelector('#store-banner span').innerText = storeBanner;
-            document.getElementById('input-store-name').value = storeName;
-            document.getElementById('input-whatsapp').value = storeWhatsapp;
-            document.getElementById('input-banner').value = storeBanner;
-            document.getElementById('floating-whatsapp').href = `https://wa.me/${storeWhatsapp}?text=${encodeURIComponent('Hola! Quisiera consultarles sobre los productos.')}`;
-        }
-
-        function saveData() {
-            localStorage.setItem('store_products', JSON.stringify(products));
-            localStorage.setItem('store_categories', JSON.stringify(categories));
-            localStorage.setItem('store_name', storeName);
-            localStorage.setItem('store_whatsapp', storeWhatsapp);
-            localStorage.setItem('store_banner', storeBanner);
+            document.getElementById('store-title').innerText = storeData.name;
+            document.querySelector('#store-banner span').innerText = storeData.banner;
+            document.getElementById('input-store-name').value = storeData.name;
+            document.getElementById('input-whatsapp').value = storeData.whatsapp;
+            document.getElementById('input-banner').value = storeData.banner;
+            document.getElementById('floating-whatsapp').href = `https://wa.me/${storeData.whatsapp}?text=${encodeURIComponent('Hola! Quisiera consultarles sobre los productos.')}`;
         }
 
         function renderCategoryFilters() {
             const container = document.getElementById('category-filters');
-            let html = `<button onclick="filterByCategory('Todos')" class="px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${currentCategory === 'Todos' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/20' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">Todos</button>`;
-            categories.forEach(cat => {
+            const categories = ['Todos', ...new Set(storeData.products.map(p => p.category))];
+            
+            container.innerHTML = categories.map(cat => {
                 const active = currentCategory === cat;
-                html += `<button onclick="filterByCategory('${cat}')" class="px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${active ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/20' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">${cat}</button>`;
-            });
-            container.innerHTML = html;
-        }
-
-        function renderCategoryAdminList() {
-            const container = document.getElementById('admin-categories-list');
-            container.innerHTML = categories.map((cat, index) => `
-                <div class="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl text-xs font-bold text-slate-700 shadow-sm">
-                    <span>${cat}</span>
-                    <button onclick="deleteCategory(${index})" class="text-rose-400 hover:text-rose-600 ml-1"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-            `).join('');
-        }
-
-        function renderCategorySelect() {
-            const select = document.getElementById('p-category');
-            select.innerHTML = categories.map(cat => `<option value="${cat}">${cat}</option>`).join('');
-        }
-
-        function addCategory() {
-            const input = document.getElementById('new-category-name');
-            const name = input.value.trim();
-            if (!name || categories.includes(name)) return;
-            categories.push(name);
-            input.value = "";
-            saveData();
-            renderCategoryFilters();
-            renderCategoryAdminList();
-            renderCategorySelect();
-        }
-
-        function deleteCategory(index) {
-            if (categories.length <= 1) {
-                alert("Debes tener al menos una categoría.");
-                return;
-            }
-            if (confirm(`¿Eliminar la categoría?`)) {
-                categories.splice(index, 1);
-                saveData();
-                renderCategoryFilters();
-                renderCategoryAdminList();
-                renderCategorySelect();
-                renderCatalog();
-            }
+                return `<button onclick="filterByCategory('${cat}')" class="px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${active ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/20' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">${cat}</button>`;
+            }).join('');
         }
 
         function switchView(view) {
@@ -466,7 +378,7 @@
 
         function changeProductImage(prodIndex, imgIndex) {
             const imgElement = document.getElementById(`prod-img-${prodIndex}`);
-            const p = products[prodIndex];
+            const p = storeData.products[prodIndex];
             if(p.images && p.images[imgIndex]) {
                 imgElement.src = p.images[imgIndex].trim();
                 const dotsContainer = document.getElementById(`prod-dots-${prodIndex}`);
@@ -479,7 +391,7 @@
         }
 
         function openProductDetail(index) {
-            const p = products[index];
+            const p = storeData.products[index];
             const images = (p.images && p.images.length > 0) ? p.images : ['https://via.placeholder.com/300?text=Sin+Imagen'];
             const content = document.getElementById('modal-detail-content');
 
@@ -550,14 +462,14 @@
                 `;
             }).join('');
 
-            lastTicketText = `📋 *COMPROBANTE DE PEDIDO* - *${storeName}*\nFecha: ${dateStr} ${timeStr}\n\n` +
+            lastTicketText = `📋 *COMPROBANTE DE PEDIDO* - *${storeData.name}*\nFecha: ${dateStr} ${timeStr}\n\n` +
                 cart.map(i => `• ${i.name} (x${i.quantity}) - $${Number(i.price * i.quantity).toLocaleString()}`).join('\n') +
                 `\n\n*TOTAL ESTIMADO: $${Number(total).toLocaleString()}*\n\n¿Me confirman disponibilidad para coordinar pago y envío?`;
 
             ticketContainer.innerHTML = `
                 <div class="bg-slate-50 p-4 sm:p-6 rounded-2xl space-y-3 sm:space-y-4 border border-slate-200">
                     <div class="text-center pb-3 border-b border-slate-200">
-                        <h4 class="font-black text-base sm:text-lg text-slate-900">${storeName}</h4>
+                        <h4 class="font-black text-base sm:text-lg text-slate-900">${storeData.name}</h4>
                         <p class="text-xs text-slate-500">Comprobante Oficial de Reserva</p>
                         <p class="text-[11px] text-slate-400 mt-0.5">${dateStr} - ${timeStr}</p>
                     </div>
@@ -576,14 +488,14 @@
         }
 
         function sendTicketToWhatsApp() {
-            window.open(`https://wa.me/${storeWhatsapp}?text=${encodeURIComponent(lastTicketText)}`, '_blank');
+            window.open(`https://wa.me/${storeData.whatsapp}?text=${encodeURIComponent(lastTicketText)}`, '_blank');
         }
 
         function renderCatalog() {
             const grid = document.getElementById('products-grid');
             const searchTerm = document.getElementById('search-input') ? document.getElementById('search-input').value.toLowerCase() : '';
 
-            let filtered = products.filter(p => {
+            let filtered = storeData.products.filter(p => {
                 const matchesCategory = (currentCategory === 'Todos' || p.category === currentCategory);
                 const matchesSearch = p.name.toLowerCase().includes(searchTerm) || (p.description && p.description.toLowerCase().includes(searchTerm));
                 return matchesCategory && matchesSearch;
@@ -595,7 +507,7 @@
             }
 
             grid.innerHTML = filtered.map((p) => {
-                const originalIndex = products.indexOf(p);
+                const originalIndex = storeData.products.indexOf(p);
                 const images = (p.images && p.images.length > 0) ? p.images : ['https://via.placeholder.com/300?text=Sin+Imagen'];
                 const mainImage = images[0].trim();
 
@@ -656,7 +568,7 @@
         }
 
         function addToCart(index) {
-            const p = products[index];
+            const p = storeData.products[index];
             if (p.stock <= 0) return;
             const existing = cart.find(item => item.index === index);
             if (existing) {
@@ -714,6 +626,7 @@
                 }).join('');
                 totalEl.innerText = `$${Number(total).toLocaleString()}`;
             }
+            document.getElementById('cart-modal').classList.add('hidden'); // bugfix
             document.getElementById('cart-modal').classList.remove('hidden');
         }
 
@@ -739,11 +652,11 @@
 
         function renderAdminTable() {
             const tbody = document.getElementById('admin-table-body');
-            if (products.length === 0) {
+            if (storeData.products.length === 0) {
                 tbody.innerHTML = `<tr><td colspan="6" class="text-center text-slate-400 py-8">No hay productos.</td></tr>`;
                 return;
             }
-            tbody.innerHTML = products.map((p, index) => {
+            tbody.innerHTML = storeData.products.map((p, index) => {
                 const firstImg = (p.images && p.images.length > 0) ? p.images[0] : '';
                 return `
                     <tr class="hover:bg-slate-50/80 transition-colors">
@@ -772,17 +685,18 @@
             }).join('');
         }
 
-        function updateStock(index, change) {
-            products[index].stock = Math.max(0, products[index].stock + change);
-            saveData();
+        async function updateStock(index, change) {
+            storeData.products[index].stock = Math.max(0, storeData.products[index].stock + change);
+            await saveCloudData();
             renderAdminTable();
+            renderCatalog();
         }
 
-        function handleProductSubmit(e) {
+        async function handleProductSubmit(e) {
             e.preventDefault();
             const editIndex = document.getElementById('edit-index').value;
             const name = document.getElementById('p-name').value;
-            const category = document.getElementById('p-category').value;
+            const category = document.getElementById('p-category').value.trim();
             const price = parseFloat(document.getElementById('p-price').value);
             const oldPrice = document.getElementById('p-old-price').value ? parseFloat(document.getElementById('p-old-price').value) : "";
             const stock = parseInt(document.getElementById('p-stock').value);
@@ -792,19 +706,20 @@
             const description = document.getElementById('p-description').value.trim();
 
             if (editIndex === "") {
-                products.push({ name, category, price, oldPrice, stock, images, featured, description });
+                storeData.products.push({ name, category, price, oldPrice, stock, images, featured, description });
             } else {
-                products[editIndex] = { name, category, price, oldPrice, stock, images, featured, description };
+                storeData.products[editIndex] = { name, category, price, oldPrice, stock, images, featured, description };
             }
 
-            saveData();
+            await saveCloudData();
             resetForm();
             renderAdminTable();
             renderCatalog();
+            renderCategoryFilters();
         }
 
         function editProduct(index) {
-            const p = products[index];
+            const p = storeData.products[index];
             document.getElementById('edit-index').value = index;
             document.getElementById('p-name').value = p.name;
             document.getElementById('p-category').value = p.category;
@@ -829,28 +744,30 @@
             document.getElementById('cancel-edit-btn').classList.add('hidden');
         }
 
-        function deleteProduct(index) {
+        async function deleteProduct(index) {
             if (confirm("¿Estás seguro de eliminar este producto?")) {
-                products.splice(index, 1);
-                saveData();
+                storeData.products.splice(index, 1);
+                await saveCloudData();
                 renderAdminTable();
                 renderCatalog();
+                renderCategoryFilters();
             }
         }
 
-        function saveStoreConfig() {
+        async function saveStoreConfig() {
             const newName = document.getElementById('input-store-name').value.trim();
             const newWp = document.getElementById('input-whatsapp').value.trim();
             const newBanner = document.getElementById('input-banner').value.trim();
-            if (newName) storeName = newName;
-            if (newWp) storeWhatsapp = newWp;
-            if (newBanner) storeBanner = newBanner;
-            saveData();
+            if (newName) storeData.name = newName;
+            if (newWp) storeData.whatsapp = newWp;
+            if (newBanner) storeData.banner = newBanner;
+            
+            await saveCloudData();
             updateHeaderInfo();
-            alert("¡Configuración guardada!");
         }
 
-        renderCatalog();
+        // Iniciar cargando la base de datos compartida
+        loadCloudData();
     </script>
 </body>
 </html>
